@@ -43,6 +43,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <h6 className='text-white text-center mt-5'>© 2021 Mirpurian Volunteers. All rights reserved</h6>
             </div>
         </div>
     );
