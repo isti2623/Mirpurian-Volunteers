@@ -6,7 +6,7 @@ import logo from '../../images/logo.png'
 
 const Footer = () => {
     return (
-        <div className='bg-dark p-3'>
+        <div className='bg-dark p-3 mt-5'>
             <div className='container'>
                 <div className="row">
                     <div className="col-lg-4">

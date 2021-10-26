@@ -5,7 +5,7 @@ import blogThree from '../../images/blog-three.jpg'
 
 const Blog = () => {
     return (
-        <div className='container my-3'>
+        <div className='container my-3 mb-5'>
             <h2 className='fw-bold text-center about-part text-warning'>BLOG</h2>
             <h1 className='custom-h1 text-center mt-5 mb-2'>Our Latest News
 
