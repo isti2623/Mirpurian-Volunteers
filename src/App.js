@@ -15,6 +15,7 @@ import Blog from './components/Blog/Blog';
 import Contact from './components/Contact/Contact';
 import Admin from './components/Admin/Admin';
 import NotFound from './components/NotFound/NotFound';
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div>
@@ -55,6 +56,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
 
     </div>

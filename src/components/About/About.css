@@ -1,0 +1,18 @@
+.about-part{
+    margin-top: 130px;
+    margin-bottom: 50px;
+}
+.custom-h1{
+    font-weight: 700;
+    font-size: 60px;
+}
+.save{
+    background-color: rgba(106, 230, 106, 0.555);
+    border-radius: 50%;
+    padding: 10px;
+}
+.fresh{
+    background-color: rgba(245, 242, 57, 0.555);
+    border-radius: 40%;
+    padding: 5px;
+}

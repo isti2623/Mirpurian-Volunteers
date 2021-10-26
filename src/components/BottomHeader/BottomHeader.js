@@ -8,7 +8,7 @@ const BottomHeader = () => {
         <div>
             <Navbar sticky="top" collapseOnSelect expand="lg">
                 <Container>
-                    <Link to='/'> <Navbar.Brand href="#home"><img src={logo} alt="" srcset="" /><span className='fw-bold text-dark fs-2 ms-2 mt-5'>Mirpurian Volunteers</span></Navbar.Brand></Link>
+                    <Link to='/'> <Navbar.Brand><img src={logo} alt="" srcset="" /><span className='fw-bold text-dark fs-2 ms-2 mt-5'>Mirpurian Volunteers</span></Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
