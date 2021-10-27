@@ -1,9 +1,11 @@
 import React from 'react';
 import { Container, Nav, Navbar, Stack, Button } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+
 import logo from '../../images/logo.png'
 
 const BottomHeader = () => {
+
     return (
         <div>
             <Navbar sticky="top" collapseOnSelect expand="lg">

@@ -4,8 +4,10 @@ import { faMailBulk, faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
 import { Button, Stack } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './TopHeader.css'
+import useAuth from '../../hooks/useAuth';
 
 const TopHeader = () => {
+    const { user, logout } = useAuth();
     return (
         <div>
             <div className="container">
@@ -19,16 +21,20 @@ const TopHeader = () => {
 
                     <div>
                         <Stack direction="horizontal" gap={3}>
-                            <NavLink
-                                className='top-header-auth login text-secondary'
-                                to="/login"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "red"
-                                }}
-                            >
-                                Login
-                            </NavLink>
+                            <div className='container'>
+
+                                <img className='details-header ms-2 mt-3' src={user.photoURL} alt="" />
+                                <span className='text-secondary fw-bold ms-2 mt-5'>{user.displayName}</span>
+
+
+                                {
+                                    user.email ?
+                                        <Button onClick={logout} className='menu-btn ms-2 mt-4' variant="light"> Logout</Button>
+                                        :
+                                        <Link to='/login'><Button className='menu-btn' variant="light"> Login</Button></Link>
+                                }
+
+                            </div>
                             <NavLink
                                 className='top-header-auth text-secondary'
                                 to="/signup"

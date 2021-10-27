@@ -1,9 +1,98 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
+import useFirebase from '../../hooks/useFirebase';
 
 const Login = () => {
+    const {
+        signInUsingGoogle,
+        user,
+        handleUserRegister,
+        handleUserLogin,
+    } = useFirebase();
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home'
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri)
+            })
+    }
+    const hanldeEmail = (e) => {
+        setEmail(e.target.value);
+    };
+    const hanldePassword = (e) => {
+        setPassword(e.target.value);
+    };
+
+    // console.log(email, password);
+
+    const handleRegister = () => {
+        handleUserRegister(email, password);
+    };
+
+    const handleLogin = () => {
+        handleUserLogin(email, password);
+        history.push(redirect_uri)
+    };
     return (
-        <div>
-            <h2>Login</h2>
+        <div className="div d-flex justify-content-center align-items-center">
+            <div className="row container">
+                <div className="col-md-6">
+                    <div>
+                        <div className="form-input mt-5">
+                            <input
+                                onChange={hanldeEmail}
+                                className="mt-2 p-2"
+                                type="email"
+                                placeholder="Email"
+                            />
+                            <br />
+                            <input
+                                onChange={hanldePassword}
+                                className="mt-2 p-2"
+                                type="password"
+                                placeholder="Password"
+                            />
+                            <br />
+                            <div className="login-regiater-btn mt-4">
+                                <button
+                                    onClick={handleRegister}
+                                    className="btn btn-danger me-1"
+                                >
+                                    Register
+                                </button>
+                                <button onClick={handleLogin} className="btn btn-dark text-white ms-1">
+                                    Login
+                                </button>
+                            </div>
+                        </div>
+                        <span className='mt-5'>..........................OR.........................</span>
+                        <div className="login-btn mt-4">
+                            <button
+                                onClick={handleGoogleLogin}
+                                className="btn btn-warning m-2"
+                            >
+                                google sign in
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-6">
+                    <div className="right-side-image">
+                        <img
+                            className="w-100 mt-5"
+                            src="https://img.freepik.com/free-photo/medical-stethoscope-with-paper-cut-family_23-2148488217.jpg?size=626&ext=jpg"
+                            alt=""
+                        />
+                    </div>
+                    ;
+                </div>
+            </div>
         </div>
     );
 };

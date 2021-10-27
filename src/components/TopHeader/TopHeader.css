@@ -6,3 +6,7 @@
 .login{
     margin-left: 400px;
 }
+.details-header{
+    border-radius: 50%;
+    width: 50px;
+}

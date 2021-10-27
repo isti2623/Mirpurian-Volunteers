@@ -16,48 +16,52 @@ import Contact from './components/Contact/Contact';
 import Admin from './components/Admin/Admin';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-          <Route path='/signup'>
-            <Signup></Signup>
-          </Route>
-          <Route path='/donate-now'>
-            <Donate></Donate>
-          </Route>
-          <Route path='/about'>
-            <About></About>
-          </Route>
-          <Route path='/event'>
-            <Event></Event>
-          </Route>
-          <Route path='/blog'>
-            <Blog></Blog>
-          </Route>
-          <Route path='/contact'>
-            <Contact></Contact>
-          </Route>
-          <Route path='/admin'>
-            <Admin></Admin>
-          </Route>
-          <Route path='*'>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/signup'>
+              <Signup></Signup>
+            </Route>
+            <PrivateRoute path='/donate-now'>
+              <Donate></Donate>
+            </PrivateRoute>
+            <Route path='/about'>
+              <About></About>
+            </Route>
+            <Route path='/event'>
+              <Event></Event>
+            </Route>
+            <Route path='/blog'>
+              <Blog></Blog>
+            </Route>
+            <Route path='/contact'>
+              <Contact></Contact>
+            </Route>
+            <PrivateRoute path='/admin'>
+              <Admin></Admin>
+            </PrivateRoute>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
 
     </div>
   );
