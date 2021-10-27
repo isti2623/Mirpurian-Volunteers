@@ -6,7 +6,7 @@ import './AddEvent.css'
 
 const AddEvent = () => {
     const { user } = useAuth();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
         console.log(data);
         data.email = user.email;
@@ -17,7 +17,12 @@ const AddEvent = () => {
             body: JSON.stringify(data),
         })
             .then((res) => res.json())
-            .then((result) => console.log(result));
+            .then((data) => {
+                if (data.insertedId) {
+                    alert('successfully added the user');
+                    reset();
+                }
+            });
     };
 
 
