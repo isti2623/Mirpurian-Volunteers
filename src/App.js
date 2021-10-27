@@ -46,9 +46,9 @@ function App() {
             <Route path='/about'>
               <About></About>
             </Route>
-            <Route path='/event'>
+            <PrivateRoute path='/event'>
               <Event></Event>
-            </Route>
+            </PrivateRoute>
             <Route path='/addEvent'>
               <AddEvent></AddEvent>
             </Route>
