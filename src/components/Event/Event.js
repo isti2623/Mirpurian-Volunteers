@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormControl, InputGroup, Button } from 'react-bootstrap';
 
 const Event = () => {
+    const [events, setEvents] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/events')
+            .then(res => res.json())
+            .then(data => setEvents(data))
+    }, [])
     return (
         <div>
             <div className='container'>
@@ -15,6 +21,20 @@ const Event = () => {
                         Search
                     </Button>
                 </InputGroup>
+                <div className="row">
+                    {
+                        events.map(event =>
+                            <div className="col-lg-4">
+                                <img height='500' className='w-100 p-3' src={event.image} alt="" srcset="" />
+                                <div className='card shadow'>
+                                    <h6 className='text-success text-center fs-2'>{event.title}</h6>
+                                    <div className="btn btn-success">More Details</div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
+
             </div>
         </div>
     );

@@ -18,6 +18,8 @@ import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddEvent from './components/AddEvent/AddEvent';
+import AllEvent from './components/AllEvent/AllEvent';
 function App() {
   return (
     <div>
@@ -45,6 +47,12 @@ function App() {
             </Route>
             <Route path='/event'>
               <Event></Event>
+            </Route>
+            <Route path='/add-event'>
+              <AddEvent></AddEvent>
+            </Route>
+            <Route path='/all-events'>
+              <AllEvent></AllEvent>
             </Route>
             <Route path='/blog'>
               <Blog></Blog>
