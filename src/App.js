@@ -20,6 +20,7 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddEvent from './components/AddEvent/AddEvent';
 import AllEvent from './components/AllEvent/AllEvent';
+import UpdateEvent from './components/UpdateEvent/UpdateEvent';
 function App() {
   return (
     <div>
@@ -53,6 +54,9 @@ function App() {
             </Route>
             <Route path='/allEvents'>
               <AllEvent></AllEvent>
+            </Route>
+            <Route path="events/update/:productId">
+              <UpdateEvent></UpdateEvent>
             </Route>
             <Route path='/blog'>
               <Blog></Blog>
