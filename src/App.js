@@ -48,10 +48,10 @@ function App() {
             <Route path='/event'>
               <Event></Event>
             </Route>
-            <Route path='/add-event'>
+            <Route path='/addEvent'>
               <AddEvent></AddEvent>
             </Route>
-            <Route path='/all-events'>
+            <Route path='/allEvents'>
               <AllEvent></AllEvent>
             </Route>
             <Route path='/blog'>

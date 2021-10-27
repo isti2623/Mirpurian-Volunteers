@@ -8,6 +8,7 @@ const Event = () => {
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])
+    console.log(events);
     return (
         <div>
             <div className='container'>
@@ -24,6 +25,7 @@ const Event = () => {
                 <div className="row">
                     {
                         events.map(event =>
+
                             <div className="col-lg-4">
                                 <img height='500' className='w-100 p-3' src={event.image} alt="" srcset="" />
                                 <div className='card shadow'>

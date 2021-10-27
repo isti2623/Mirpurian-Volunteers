@@ -1,12 +1,15 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
 import Admin from '../Admin/Admin';
 import './AddEvent.css'
 
 const AddEvent = () => {
-
+    const { user } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
+        console.log(data);
+        data.email = user.email;
         console.log(data);
         fetch("http://localhost:5000/addEvents", {
             method: "POST",

@@ -5,7 +5,6 @@ import useFirebase from '../../hooks/useFirebase';
 const Login = () => {
     const {
         signInUsingGoogle,
-        user,
         handleUserRegister,
         handleUserLogin,
     } = useFirebase();

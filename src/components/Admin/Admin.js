@@ -9,8 +9,8 @@ const Admin = () => {
 
             <Stack direction="horizontal" gap={3}>
                 <div className='container ms-5 p-3'>
-                    <Link to='/add-event'><Button className='p-2' variant="secondary">Add Event</Button></Link>
-                    <Link to='/all-events'><Button className='ms-5' variant="warning">All Events</Button></Link>
+                    <Link to='/addEvent'><Button className='p-2' variant="secondary">Add Event</Button></Link>
+                    <Link to='/allEvents'><Button className='ms-5' variant="warning">All Your Events</Button></Link>
                 </div>
             </Stack>
         </div>
