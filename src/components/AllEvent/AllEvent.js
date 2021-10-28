@@ -54,7 +54,7 @@ const AllEvent = () => {
             <div>
 
                 <h1 className='text-center mt-3'>Your All Events Here : {orders.length}</h1>
-                <div className="all-products">
+                <div className="all-products container">
                     <div className="row container text-center">
                         {orders?.map((pd, index) => (
                             <div className="col-md-6 col-lg-4">
