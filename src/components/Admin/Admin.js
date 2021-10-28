@@ -3,6 +3,7 @@ import { Stack, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 
+
 const Admin = () => {
     return (
         <div>
@@ -13,6 +14,7 @@ const Admin = () => {
                     <Link to='/allEvents'><Button className='ms-5' variant="warning">All Your Events</Button></Link>
                 </div>
             </Stack>
+
         </div>
     );
 };

@@ -34,11 +34,11 @@ const AddEvent = () => {
             <div className='form-part'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {/* register your input into the hook by invoking the "register" function */}
-                    <input className='p-2 m-2' placeholder='title' {...register("title")} />
+                    <input required className='p-2 m-2' placeholder='title' {...register("title")} />
                     <br />
 
                     {/* include validation with required or other standard HTML validation rules */}
-                    <input className='p-2 m-2' placeholder='image-url' {...register("image")} />
+                    <input required className='p-2 m-2' placeholder='image-url' {...register("image")} />
                     {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
                     <br />

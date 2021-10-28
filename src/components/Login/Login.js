@@ -89,7 +89,7 @@ const Login = () => {
                             alt=""
                         />
                     </div>
-                    ;
+
                 </div>
             </div>
         </div>

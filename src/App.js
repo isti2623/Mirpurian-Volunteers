@@ -46,6 +46,10 @@ function App() {
             <Route path='/about'>
               <About></About>
             </Route>
+            <Route path='/admin'>
+              <AddEvent></AddEvent>
+            </Route>
+
             <PrivateRoute path='/event'>
               <Event></Event>
             </PrivateRoute>
