@@ -11,7 +11,7 @@ const AllEvent = () => {
     const [orders, setOrders] = useState([]);
     const email = user?.email;
     useEffect(() => {
-        fetch(`http://localhost:5000/allEvents/${email}`)
+        fetch(`https://agile-sands-89026.herokuapp.com/allEvents/${email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
     }, [email, deleteCount]);
@@ -22,7 +22,7 @@ const AllEvent = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allEvents')
+        fetch('https://agile-sands-89026.herokuapp.com/allEvents')
             .then(res => res.json())
             .then(data => {
                 setProducts(data);
@@ -32,7 +32,7 @@ const AllEvent = () => {
 
     //DELETE AN Products
     const handleDeleteUser = id => {
-        const url = `http://localhost:5000/allEvents/${id}`
+        const url = `https://agile-sands-89026.herokuapp.com/allEvents/${id}`
         fetch(url, {
             method: 'DELETE',
         })

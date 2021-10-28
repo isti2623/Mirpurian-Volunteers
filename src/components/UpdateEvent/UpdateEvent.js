@@ -7,7 +7,7 @@ const UpdateEvent = () => {
     const [isUpdate, setIsUpdated] = useState(null);
     const [product, setProduct] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${productId}`)
+        fetch(`https://agile-sands-89026.herokuapp.com/users/${productId}`)
             .then((res) => res.json())
             .then((data) => setProduct(data));
     }, [productId]);
@@ -22,7 +22,7 @@ const UpdateEvent = () => {
     } = useForm();
     const onSubmit = (data) => {
         console.log(data);
-        fetch(`http://localhost:5000/users/${productId}`, {
+        fetch(`https://agile-sands-89026.herokuapp.com/users/${productId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

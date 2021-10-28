@@ -11,7 +11,7 @@ const AddEvent = () => {
         console.log(data);
         data.email = user.email;
         console.log(data);
-        fetch("http://localhost:5000/addEvents", {
+        fetch("https://agile-sands-89026.herokuapp.com/addEvents", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),

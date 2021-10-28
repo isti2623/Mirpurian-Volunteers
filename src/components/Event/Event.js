@@ -4,7 +4,7 @@ import { FormControl, InputGroup, Button } from 'react-bootstrap';
 const Event = () => {
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/events')
+        fetch('https://agile-sands-89026.herokuapp.com/events')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])
@@ -30,7 +30,7 @@ const Event = () => {
                                 <img height='500' className='w-100 p-3' src={event.image} alt="" srcset="" />
                                 <div className='card shadow'>
                                     <h6 className='text-success text-center fs-2'>{event.title}</h6>
-                                    <div className="btn btn-success">More Details</div>
+
                                 </div>
                             </div>
                         )
