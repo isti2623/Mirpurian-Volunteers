@@ -19,7 +19,7 @@ const AddEvent = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.insertedId) {
-                    alert('successfully added the user');
+                    alert('added successfully');
                     reset();
                 }
             });

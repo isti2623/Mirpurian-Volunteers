@@ -55,7 +55,7 @@ function App() {
             <Route path='/allEvents'>
               <AllEvent></AllEvent>
             </Route>
-            <Route path="events/update/:productId">
+            <Route path="/events/update/:productId">
               <UpdateEvent></UpdateEvent>
             </Route>
             <Route path='/blog'>

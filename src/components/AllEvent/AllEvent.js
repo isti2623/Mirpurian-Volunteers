@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Admin from '../Admin/Admin';
 
+
 const AllEvent = () => {
+    let deleteCount = 0;
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     const email = user?.email;
@@ -12,16 +14,20 @@ const AllEvent = () => {
         fetch(`http://localhost:5000/allEvents/${email}`)
             .then((res) => res.json())
             .then((data) => setOrders(data));
-    }, [email]);
+    }, [email, deleteCount]);
     console.log(orders);
 
     //Delete Part
+
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/allEvents')
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => {
+                setProducts(data);
+                console.log(products);
+            })
     }, [products]);
 
     //DELETE AN Products
@@ -34,8 +40,11 @@ const AllEvent = () => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     alert('deleted successfully');
-                    const remainingProducts = products.filter(product => product._id !== id);
-                    setProducts(remainingProducts);
+                    console.log(data);
+                    const remainingProducts = orders.filter(order => order._id !== id);
+                    console.log(remainingProducts);
+                    console.log(products);
+                    setOrders(remainingProducts);
                 }
             })
     }
