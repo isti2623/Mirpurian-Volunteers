@@ -61,8 +61,8 @@ const AllEvent = () => {
                                 <div className=" border border p-2 m-2">
                                     <h5>{pd?.title}</h5>
                                     <img className='w-100' src={pd?.image} alt="" srcset="" />
-                                    <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">delete</button>
-                                    <Link to={`events/update/${pd._id}`}> <Button className='ms-5' variant="success">Update</Button></Link>
+                                    <button onClick={() => handleDeleteUser(pd._id)} className="btn btn-danger m-2">Cancel</button>
+                                    <Link to={`events/update/${pd._id}`}> <Button className='ms-5' variant="success">Edit</Button></Link>
                                 </div>
                             </div>
                         ))}
