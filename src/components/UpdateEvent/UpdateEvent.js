@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 
 const UpdateEvent = () => {
     const { productId } = useParams();
     const [isUpdate, setIsUpdated] = useState(null);
     const [product, setProduct] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/events/update//${productId}`)
+        fetch(`http://localhost:5000/users/${productId}`)
             .then((res) => res.json())
             .then((data) => setProduct(data));
-    }, [productId, isUpdate]);
+    }, [productId]);
+    console.log(product);
+    console.log(productId);
 
     const {
         register,
@@ -19,7 +21,8 @@ const UpdateEvent = () => {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/events/update/${productId}`, {
+        console.log(data);
+        fetch(`http://localhost:5000/users/${productId}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data),
@@ -42,7 +45,7 @@ const UpdateEvent = () => {
                 <input
                     className="p-2 m-2"
                     defaultValue={product?.title}
-                    {...register("name")}
+                    {...register("title")}
                     required
                 />
                 {/* include validation with required or other standard HTML validation rules */}
