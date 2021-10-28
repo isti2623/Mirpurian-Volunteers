@@ -53,7 +53,7 @@ const AllEvent = () => {
             <Admin></Admin>
             <div>
 
-                <h1>Your All Events Here : {orders.length}</h1>
+                <h1 className='text-center mt-3'>Your All Events Here : {orders.length}</h1>
                 <div className="all-products">
                     <div className="row container text-center">
                         {orders?.map((pd, index) => (
